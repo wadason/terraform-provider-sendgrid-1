@@ -41,6 +41,11 @@ func Provider() *schema.Provider {
 				Optional:    true,
 				DefaultFunc: schema.EnvDefaultFunc("SENDGRID_SUBUSER", nil),
 			},
+			"teammates": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				DefaultFunc: schema.EnvDefaultFunc("SENDGRID_TEAMMATES", nil),
+			},
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
@@ -48,6 +53,7 @@ func Provider() *schema.Provider {
 			"sendgrid_subuser":          resourceSendgridSubuser(),
 			"sendgrid_template":         resourceSendgridTemplate(),
 			"sendgrid_template_version": resourceSendgridTemplateVersion(),
+			"sendgrid_teammates":        resourceSendgridTeammates(),
 		},
 
 		ConfigureContextFunc: providerConfigure,

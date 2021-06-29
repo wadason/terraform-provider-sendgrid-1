@@ -15,8 +15,15 @@ var (
 
 	// ErrSubUserNotFound error displayed when the subUser can not be found.
 	ErrSubUserNotFound = errors.New("subUser wasn't found")
+
+	// ErrSubUserNotFound error displayed when the subUser can not be found.
+	ErrTeammatesNotFound = errors.New("teammates wasn't found")
 )
 
 func subUserNotFound(name string) error {
 	return fmt.Errorf("%w: %s", ErrSubUserNotFound, name)
+}
+
+func teammatesNotFound(name string) error {
+	return fmt.Errorf("%w: %s", ErrTeammatesNotFound, name)
 }
