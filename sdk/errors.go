@@ -59,6 +59,9 @@ var (
 
 	// ErrTemplateVersionSubjectRequired error displayed when a template version subject wasn't specified.
 	ErrTemplateVersionSubjectRequired = errors.New("a template version subject is required")
+
+	// ErrFailedCreatingTeammates error displayed when the provider can not create a teammates.
+	ErrFailedCreatingTeammates = errors.New("failed creating teammates")
 )
 
 // RequestError struct permits to embed to return the statucode and the error to the parent function.
